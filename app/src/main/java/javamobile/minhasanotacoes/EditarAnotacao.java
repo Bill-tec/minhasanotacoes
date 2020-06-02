@@ -21,7 +21,7 @@ public class EditarAnotacao extends AppCompatActivity {
         BancoDeDados bancoDeDados = new BancoDeDados(getBaseContext());
         final Cursor cursor = bancoDeDados.consultarAnotacaoPeloId(this.getIntent().getIntExtra("id", 0));
 
-        EditText titulo = (EditText)findViewById(R.id.campoTitulo);
+        EditText titulo = (EditText)findViewById(R.id.campoTitulo );
         EditText conteudo = (EditText)findViewById(R.id.campoConteudo);
 
         titulo.setText(cursor.getString(cursor.getColumnIndexOrThrow("titulo")));

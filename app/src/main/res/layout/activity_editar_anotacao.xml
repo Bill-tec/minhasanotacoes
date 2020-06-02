@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,52 +12,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:textSize="24sp"
         android:textAlignment="center" />
+
     <EditText
         android:id="@+id/campoTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
         android:ems="10"
-        android:inputType="text"/>
-    <TextView
-        android:id="@+id/labelConteudo"
-        android:text="Conteúdo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:hint="Titulo"
+        android:inputType="text" />
+
     <EditText
         android:id="@+id/campoConteudo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/campoTitulo"
+        android:hint="Conteúdo"
         android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_weight="0.75" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/botaoGravar"
-            android:text="Atualizar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:onClick="atualizarAnotacao"/>
-        <Button
-            android:id="@+id/botaoExcluir"
-            android:text="Excluir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="excluirAnotacao"/>
-    </LinearLayout>
+        android:layout_above="@id/atualizar"/>
 
     <Button
-        android:id="@+id/botaoCancelar"
-        android:text="Cancelar"
+        android:id="@+id/atualizar"
+        android:text="Atualizar"
+        android:textAlignment="center"
+        android:ems="12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="2dp"
+        android:onClick="atualizarAnotacao"
+        android:layout_above="@id/cancelar"
+        />
+
+    <Button
+        android:id="@+id/excluir"
+        android:text="Excluir"
+        android:ems="12"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="voltar"/>
-</LinearLayout>
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@id/atualizar"
+        android:onClick="excluirAnotacao"
+        android:layout_alignTop="@id/atualizar"
+        />
+    <Button
+        android:id="@+id/cancelar"
+        android:text="Cancelar"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="voltar"
+        />
+
+
+
+</RelativeLayout>
